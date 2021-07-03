@@ -1,0 +1,21 @@
+{
+  "name": "css_car",
+  "version": "1.0.0",
+  "description": "A car made with html and css alone",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "start":  "node-sass scss/style.scss assets/css/style.css -w -r"
+  },
+  "keywords": [
+    "car",
+    "css",
+    "web",
+    "scss"
+  ],
+  "author": "Chibuikem",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^6.0.0"
+  }
+}
