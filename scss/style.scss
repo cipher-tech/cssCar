@@ -11,8 +11,8 @@
   --bgColor: #c6e4ee;
   --topFillColor: #ffba00;
   --tireColor: white;
-  --roadColor: #7E7E7E;
-  --trackColor: #D3D3D3;
+  --roadColor: #7e7e7e;
+  --trackColor: #d3d3d3;
 }
 html {
   box-sizing: border-box;
@@ -34,7 +34,7 @@ body {
   // place-content: center;
   place-items: center;
 }
-.sun{
+.sun {
   position: absolute;
   top: 0;
   right: 16rem;
@@ -189,10 +189,18 @@ body {
   }
 }
 
-.background{
+.background {
   position: absolute;
   z-index: -2;
-  bottom: 19rem;
+  bottom: 20rem;
+  height: 40rem;
+  width: 100%;
+  background-image: url(/../svgFiles/bgImagePng.png);
+  background-size: 123% 100%;
+  background-repeat: no-repeat;
+  svg {
+    width: 100%;
+  }
 }
 
 .road {
