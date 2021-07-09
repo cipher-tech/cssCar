@@ -7,10 +7,12 @@
 }
 :root {
   --carColor: yellow;
-  --windowColor: black;
-  --bgColor: white;
-  --topFillColor: #FFBA00;
+  --windowColor: #474747;
+  --bgColor: #c6e4ee;
+  --topFillColor: #ffba00;
   --tireColor: white;
+  --roadColor: #7E7E7E;
+  --trackColor: #D3D3D3;
 }
 html {
   box-sizing: border-box;
@@ -25,153 +27,116 @@ html {
 body {
   background-color: var(--bgColor);
   display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   flex: 1;
   min-height: 100vh;
-  place-content: center;
+  // place-content: center;
   place-items: center;
 }
-
+.sun{
+  position: absolute;
+  top: 0;
+  right: 16rem;
+}
 .main {
   width: 70%;
   height: auto;
   //   border: 1px solid white;
   padding: 1rem;
+  margin-bottom: -5rem;
   max-width: 70rem;
 }
-.carRoof-svg{
+.carRoof-svg {
   position: relative;
   height: 176px;
   width: 507px;
-  #roof{
-    fill: #FFBA00;
-    stroke: #FFBA00;
+  #roof {
+    fill: #ffba00;
+    stroke: #ffba00;
   }
-  &__backWindow{
+  &__backWindow {
     position: absolute;
     left: 21px;
     top: 85px;
     height: 58px;
     width: 97px;
 
-    #backWindow{
-     fill: var(--windowColor);
-     stroke: var(--windowColor) ;
+    #backWindow {
+      fill: var(--windowColor);
+      stroke: var(--windowColor);
     }
   }
-  &__frontWindow{
+  &__frontWindow {
     right: 177px;
     top: 85px;
     position: absolute;
     height: 69px;
     width: 97px;
-    #frontWindow{
+    #frontWindow {
       fill: var(--windowColor);
-      stroke: var(--windowColor) ;
+      stroke: var(--windowColor);
     }
   }
-  &__leftWindow{
+  &__leftWindow {
     left: 113px;
     top: 83px;
     position: absolute;
     height: 72px;
     width: 138px;
     z-index: 6;
-    #leftWindow{
+    #leftWindow {
       fill: var(--windowColor);
-      stroke: var(--windowColor) ;
+      stroke: var(--windowColor);
     }
   }
-  &__rightWindow{
+  &__rightWindow {
     right: 259px;
     top: 87px;
     position: absolute;
     height: 69px;
     width: 150px;
-    #rightWindow{
+    #rightWindow {
       fill: var(--windowColor);
-      stroke: var(--windowColor) ;
+      stroke: var(--windowColor);
     }
   }
-  &__doorFrame{
+  &__doorFrame {
     position: absolute;
     top: 142px;
     left: 217px;
     z-index: 5;
-    opacity: .2;
+    opacity: 0.2;
     transform: scale(1.8, 2.2);
   }
 }
 .carRoof {
   position: relative;
-  // height: 11rem;
-  // width: 100%;
-  // clip-path: polygon(15% 0, 50% 0, 74% 87%, 0% 87%);
-  // border: 1px solid black;
-  // background-color: var(--carColor);
-
-  // &::after{
-  //   content: '';
-  //   width: 50%;
-  //   height: 100%;
-  //   position: absolute;
-  //   left: 0;
-  //   background-color: azure;
-  // }
-  // &-window {
-  //   position: absolute;
-  //   top: 1rem;
-  //   height: 7rem;
-  //   width: 13rem;
-  //   background-color: var(--windowColor);
-    
-  // }
-  // .leftWindow {
-  //   top: 2rem;
-  //   left: 9rem;
-  //   border-top-left-radius: 12rem 8rem;
-  // }
-  // .rightWindow {
-  //   top: 2rem;
-  //   right: 30rem;
-  //   border-top-right-radius: 12rem 8rem;
-  // }
-
-  //   &::after {
-  //     content: "";
-  //     position: absolute;
-
-  //     top: 1px;
-  //     left: 1px;
-  //     width: 99%;
-  //     height: 99%;
-  //     background-color: yellow;
-  //     clip-path: polygon(15% 0, 70% 0, 100% 100%, 0 100%);
-  //   }
 }
 
 .carBase {
   position: relative;
   width: 100%;
   height: 15rem;
-  background-color:  #FFC919;
+  background-color: #ffc919;
   margin-top: -1.5rem;
   border-top-right-radius: 17rem 7rem;
   border-bottom-right-radius: 3rem;
   border-bottom-left-radius: 3rem;
   // overflow: hidden;
 
-  &-bumper{
-    content: '';
+  &-bumper {
+    content: "";
     position: absolute;
     height: 7rem;
     width: 6rem;
     top: 8rem;
     left: -1.5rem;
-    background-color: #FFC919;
+    background-color: #ffc919;
     border-top-left-radius: 3.5rem 5rem;
     border-bottom-left-radius: 4rem 6rem;
     overflow: hidden;
-    &__light{
+    &__light {
       position: absolute;
       height: 1rem;
       width: 2rem;
@@ -201,7 +166,7 @@ body {
     height: 3rem;
     background: white;
     position: absolute;
-    right: 1.0rem;
+    right: 1rem;
     top: 4rem;
     border-bottom-left-radius: 4rem 5rem;
     border-top-right-radius: 11rem 3rem;
@@ -215,11 +180,70 @@ body {
     top: 10rem;
     border-top-left-radius: 2rem 4rem;
   }
-  &-backLight{
+  &-backLight {
     background-color: red;
     position: absolute;
     height: 4rem;
     width: 4rem;
     border-bottom-right-radius: 3rem 4rem;
+  }
+}
+
+.background{
+  position: absolute;
+  z-index: -2;
+  bottom: 19rem;
+}
+
+.road {
+  height: 20rem;
+  width: 100%;
+  background-color: var(--roadColor);
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+  &-tracks {
+    display: flex;
+    width: 170%;
+    align-self: center;
+    overflow: hidden;
+    position: absolute;
+    top: -2rem;
+    &__lines {
+      font-size: 10rem;
+      color: var(--trackColor);
+      display: flex;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      transform: scale(7.5, 4);
+    }
+  }
+  &-topSideWalk {
+    background: linear-gradient(
+      to bottom,
+      #dac9c1 50%,
+      #c9b3a9 50%,
+      #b59b8f 60%,
+      #bfa497 70%,
+      #9c8781 80%,
+      #74676b 100%
+    );
+    height: 3rem;
+    width: 100%;
+  }
+  &-bottomSideWalk {
+    background: linear-gradient(
+      to bottom,
+      #dac9c1 50%,
+      #c9b3a9 50%,
+      #b59b8f 60%,
+      #bfa497 70%,
+      #9c8781 80%,
+      #74676b 100%
+    );
+    height: 3rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
   }
 }
