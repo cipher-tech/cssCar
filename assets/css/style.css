@@ -10,7 +10,7 @@
   --windowColor: #474747;
   --bgColor: #c6e4ee;
   --topFillColor: #ffba00;
-  --tireColor: white;
+  --tireColor: #c1c6c1;
   --roadColor: #7e7e7e;
   --trackColor: #d3d3d3; }
 
@@ -134,8 +134,15 @@ body {
     width: 13rem;
     border-radius: 50%;
     position: absolute;
-    background: var(--tireColor);
-    bottom: -6rem; }
+    background: #989898;
+    bottom: -6rem;
+    border: solid 16px #5a5a5a;
+    animation: rotate360 2s linear 0s infinite; }
+    .carBase-tire svg {
+      position: absolute;
+      bottom: 2.6rem;
+      left: 2.5rem;
+      transform: scale(1.5); }
   .carBase .front {
     right: 11%; }
   .carBase .back {
@@ -152,7 +159,7 @@ body {
   .carBase .frontLight-black {
     width: 4rem;
     height: 2.5rem;
-    background: black;
+    background: #474747;
     position: absolute;
     right: 0rem;
     top: 10rem;
@@ -172,7 +179,8 @@ body {
   width: 100%;
   background-image: url(/../svgFiles/bgImagePng.png);
   background-size: 123% 100%;
-  background-repeat: no-repeat; }
+  background-repeat: repeat;
+  animation: moveBackground 20s linear 0s infinite; }
   .background svg {
     width: 100%; }
 
@@ -189,7 +197,8 @@ body {
     align-self: center;
     overflow: hidden;
     position: absolute;
-    top: -2rem; }
+    top: -2rem;
+    animation: moveTracks 2s linear 0s infinite; }
     .road-tracks__lines {
       font-size: 10rem;
       color: var(--trackColor);
@@ -207,3 +216,39 @@ body {
     width: 100%;
     position: absolute;
     bottom: 0px; }
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes rotate360 {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@keyframes moveTracks {
+  0% {
+    left: -1rem; }
+  100% {
+    left: -90rem; } }
+
+@-webkit-keyframes moveTracks {
+  0% {
+    left: -1rem; }
+  100% {
+    left: -90rem; } }
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0%; }
+  100% {
+    background-position: 534%; } }
+
+@-webkit-keyframes moveBackground {
+  0% {
+    background-position: 0%; }
+  100% {
+    background-position: 534%; } }
