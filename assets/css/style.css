@@ -252,3 +252,57 @@ body {
     background-position: 0%; }
   100% {
     background-position: 534%; } }
+
+@media only screen and (max-width: 980px) {
+  .carRoof {
+    width: 100%; }
+  .carRoof-svg {
+    position: relative;
+    height: 157px;
+    width: 77%; }
+  .carRoof-svg__backWindow {
+    position: absolute;
+    left: 3%;
+    top: 80px;
+    height: 57px;
+    width: 87px; }
+  .carRoof-svg__frontWindow {
+    right: 25%;
+    top: 80px;
+    position: absolute;
+    height: 56px;
+    width: 88px; }
+  .carRoof-svg__leftWindow {
+    left: 89px;
+    top: 79px;
+    position: absolute;
+    height: 80px;
+    width: 130px;
+    z-index: 6; }
+  .carRoof-svg__rightWindow {
+    right: 34%;
+    top: 83px;
+    position: absolute;
+    height: 80px;
+    width: 149px; } }
+
+@media only screen and (max-width: 850px) {
+  .main {
+    margin-bottom: -13rem;
+    transform: scale(0.5);
+    width: 100%; } }
+
+@media only screen and (max-width: 600px) {
+  .main {
+    width: 58rem; }
+  .carRoof-svg {
+    position: relative;
+    height: 14.2rem; }
+  .carRoof-svg__backWindow {
+    left: 1%; }
+  .carRoof-svg__frontWindow {
+    right: 22%; }
+  .carRoof-svg__leftWindow {
+    width: 107px; }
+  .carRoof-svg__rightWindow {
+    width: 133px; } }
