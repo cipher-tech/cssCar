@@ -9,6 +9,7 @@
   --carColor: yellow;
   --windowColor: #474747;
   --bgColor: #c6e4ee;
+  --bgColorNight: #292929;
   --topFillColor: #ffba00;
   --tireColor: #c1c6c1;
   --roadColor: #7e7e7e;
@@ -33,11 +34,23 @@ body {
   min-height: 100vh;
   // place-content: center;
   place-items: center;
+  animation: theme 40s linear alternate infinite;
+
 }
 .sun {
   position: absolute;
   top: 0;
-  right: 16rem;
+  right: -20%;
+  z-index: -11;
+  animation: sun 40s linear infinite;
+  &-svgMain{
+    fill: rgba(255,153,68,0.94);
+    animation: sunMoonTheme 40s linear alternate infinite;
+  }
+  &-offset{
+    fill: rgba(255,153,68,0.26);
+    animation: sunOffsetMoonTheme 40s linear alternate infinite;
+  }
 }
 .main {
   width: 70%;
@@ -54,6 +67,9 @@ body {
   #roof {
     fill: #ffba00;
     stroke: #ffba00;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 5s linear alternate infinite;
   }
   &__backWindow {
     position: absolute;
@@ -266,6 +282,56 @@ body {
   }
 }
 
+@keyframes dash {
+  from {
+    stroke-dashoffset: 822;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes sun {
+  from {
+    right: -11%;
+  }
+  to {
+    right: 100%;
+  }
+}
+@keyframes sunMoonTheme {
+  0% {
+    fill: #eae7e4f0;
+  }
+  6% {
+    fill: rgba(255,153,68,0.94);
+  }
+  50% {
+    fill: rgba(255,153,68,0.94);
+  }
+  51% {
+    fill: #eae7e4f0;
+  }
+  100% {
+    fill: #eae7e4f0;
+  }
+}
+@keyframes theme {
+  from {
+    background-color: var(--bgColor);
+  }
+  to {
+    background-color: var(--bgColorNight);
+  }
+}
+@-webkit-keyframes theme {
+  from {
+    background-color: var(--bgColor);
+  }
+  to {
+    background-color: var(--bgColorNight);
+  }
+}
+
 @keyframes rotate360 {
   0% {
     transform: rotate(0deg);
@@ -413,6 +479,6 @@ body {
     width: 170%;
     align-self: center;
     overflow: hidden;
-    top: 1rem;;
+    top: 1rem;
   }
 }
