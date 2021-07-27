@@ -33,21 +33,17 @@ body {
   justify-content: flex-end;
   flex: 1;
   min-height: 100vh;
-  place-items: center;
-  animation: theme 40s linear alternate infinite; }
+  place-items: center; }
 
 .sun {
   position: absolute;
   top: 0;
-  right: -20%;
-  z-index: -11;
-  animation: sun 40s linear infinite; }
+  right: 0%;
+  z-index: -11; }
   .sun-svgMain {
-    fill: rgba(255, 153, 68, 0.94);
-    animation: sunMoonTheme 40s linear alternate infinite; }
+    fill: rgba(255, 153, 68, 0.94); }
   .sun-offset {
-    fill: rgba(255, 153, 68, 0.26);
-    animation: sunOffsetMoonTheme 40s linear alternate infinite; }
+    fill: rgba(255, 153, 68, 0.26); }
 
 .main {
   width: 70%;
@@ -58,7 +54,7 @@ body {
 
 .carRoof-svg {
   position: relative;
-  height: 176px;
+  height: 174px;
   width: 507px; }
   .carRoof-svg #roof {
     fill: #ffba00;
@@ -193,7 +189,7 @@ body {
   background-image: url(/../svgFiles/bgImagePng.png);
   background-size: 123% 100%;
   background-repeat: repeat;
-  animation: moveBackground 20s linear 0s infinite; }
+  animation: moveBackground 30s linear 0s infinite; }
   .background svg {
     width: 100%; }
 
@@ -238,14 +234,12 @@ body {
 
 @keyframes sun {
   from {
-    right: -11%; }
+    right: -14%; }
   to {
     right: 100%; } }
 
 @keyframes sunMoonTheme {
   0% {
-    fill: #eae7e4f0; }
-  6% {
     fill: rgba(255, 153, 68, 0.94); }
   50% {
     fill: rgba(255, 153, 68, 0.94); }
@@ -254,10 +248,44 @@ body {
   100% {
     fill: #eae7e4f0; } }
 
+@-webkit-keyframes sunMoonTheme {
+  0% {
+    fill: rgba(255, 153, 68, 0.94); }
+  50% {
+    fill: rgba(255, 153, 68, 0.94); }
+  51% {
+    fill: #eae7e4f0; }
+  100% {
+    fill: #eae7e4f0; } }
+
+@keyframes sunOffsetMoonTheme {
+  0% {
+    fill: rgba(255, 153, 68, 0.26); }
+  50% {
+    fill: rgba(255, 153, 68, 0.26); }
+  51% {
+    fill: rgba(255, 252, 249, 0.26); }
+  100% {
+    fill: rgba(255, 252, 249, 0.26); } }
+
+@-webkit-keyframes sunOffsetMoonTheme {
+  0% {
+    fill: rgba(255, 153, 68, 0.26); }
+  50% {
+    fill: rgba(255, 153, 68, 0.26); }
+  51% {
+    fill: rgba(255, 252, 249, 0.26); }
+  100% {
+    fill: rgba(255, 252, 249, 0.26); } }
+
 @keyframes theme {
-  from {
+  0% {
     background-color: var(--bgColor); }
-  to {
+  10% {
+    background-color: var(--bgColor); }
+  90% {
+    background-color: var(--bgColorNight); }
+  100% {
     background-color: var(--bgColorNight); } }
 
 @-webkit-keyframes theme {
@@ -303,6 +331,10 @@ body {
     background-position: 534%; } }
 
 @media only screen and (max-width: 980px) {
+  .background {
+    bottom: 20rem;
+    height: 32rem;
+    background-size: 180% 100%; }
   .carRoof {
     width: 100%; }
   .carRoof-svg {
@@ -336,6 +368,10 @@ body {
     width: 149px; } }
 
 @media only screen and (max-width: 850px) {
+  .background {
+    bottom: 20rem;
+    height: 32rem;
+    background-size: 200% 100%; }
   .main {
     margin-bottom: -13rem;
     transform: scale(0.5);
