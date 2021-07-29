@@ -14,7 +14,7 @@
     "web",
     "scss"
   ],
-  "author": "Chibuikem",
+  "author": "Chibuikem Onubogu",
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.3.1",
